@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student List </title>
+    </head>
+    <body>
+         
+        <h3>Enter Studen Details</h3>
+     <form action="/" method="POST" >
+        Name  : <input type ="text" name= "name"><br>
+        Rollno : <input type ="text" name = "rollNo"><br>
+        Marks :  <input type ="number" name = "marks"><br><br>
+        <button>Submit </button>
+     </form>
+     <br>
+     <table border="1px">
+        <caption>Student Details</caption>
+        <tr><th>Name </th> <th>Roll number </th> <th>Marks</th></tr>
+
+    <% students.forEach(function (student){ %>
+       <tr>
+            <td> <%= student.name %> </td>
+            <td> <%= student.rollNo %> </td>
+            <td> <%= student.marks %> </td>
+        </tr>
+
+   <%  }) %>
+     
+    </body>
+</html>
