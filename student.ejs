@@ -6,7 +6,8 @@
     <body>
          
         <h3>Enter Studen Details</h3>
-     <form action="/" method="POST" >
+     <form action="/studentDetails" method="POST" enctype="multipart/form-data" >
+        Profile : <input  name="image" type="file" ><br>
         Name  : <input type ="text" name= "name"><br>
         Rollno : <input type ="text" name = "rollNo"><br>
         Marks :  <input type ="number" name = "marks"><br><br>
@@ -15,16 +16,19 @@
      <br>
      <table border="1px">
         <caption>Student Details</caption>
-        <tr><th>Name </th> <th>Roll number </th> <th>Marks</th></tr>
+        <tr><th>Profile</th><th>Name </th> <th>Roll number </th> <th>Marks</th></tr>
 
     <% students.forEach(function (student){ %>
+       <!-- <p><%= student.image %></p>-->
        <tr>
+           <td> <img src = "<%= student.image %>" height="50px" width="50px" /> </td>
             <td> <%= student.name %> </td>
             <td> <%= student.rollNo %> </td>
             <td> <%= student.marks %> </td>
         </tr>
 
    <%  }) %>
-     
+   
+    
     </body>
 </html>
